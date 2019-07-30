@@ -1,0 +1,14 @@
+#!/bin/bash
+WHO=${1:-$(whoami)}
+CUSTOM=${2:-https://paypal.me/NealFultz}
+
+cd "$(git rev-parse --show-cdup)"
+
+mkdir -p .github
+echo cat >.github/FUNDING.yml <<EOF
+patreon: $WHO
+ko-fi: $WHO
+custom:  $CUSTOM
+EOF
+git add .github/FUNDING.yml
+git commit -m "sponsorfying" .github/FUNDING.yml
