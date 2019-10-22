@@ -6,8 +6,7 @@ cd "$(git rev-parse --show-cdup)"
 
 mkdir -p .github
 cat >.github/FUNDING.yml <<EOF
-patreon: $WHO
-ko_fi: $WHO
+github: $WHO
 custom:  $CUSTOM
 EOF
 git add -f .github/FUNDING.yml
